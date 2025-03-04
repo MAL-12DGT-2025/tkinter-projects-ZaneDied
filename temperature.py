@@ -3,7 +3,7 @@ import tkinter as tk
 root = tk.Tk()
 
 
-title = tk.Label(root,text = "Temperature converter").grid(row = 0,column = 1)
+title = tk.Label(root,text = "Temperature\nconverter").grid(row = 0,column = 0)
 
 
 root.mainloop()
