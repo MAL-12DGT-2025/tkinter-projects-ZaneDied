@@ -2,18 +2,20 @@ import tkinter as tk
 from tkinter import ttk
 
 def convertion():
-    num = float(number.get())
+    try:
+        num = float(number.get())
+        if rclick.get() == 1:
+            #C to F
+            result = (num * 9/5) + 32
+            resl.config(text = f"{num}C is equal to {round(result,2)}F")
 
-    if rclick.get() == 1:
-        #C to F
-        result = (num * 9/5) + 32
-        resl.config(text = f"{num}C is equal to {round(result,2)}F")
 
-
-    elif rclick.get() == 2:
-        #F to C
-        result = (num - 32) * 5/9
-        resl.config(text = f"{num}F is equal to {round(result,2)}C")
+        elif rclick.get() == 2:
+            #F to C
+            result = (num - 32) * 5/9
+            resl.config(text = f"{num}F is equal to {round(result,2)}C")
+    except ValueError:
+        resl.config(text="Not a valid number try again.")
 
 
 
