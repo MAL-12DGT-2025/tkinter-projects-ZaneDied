@@ -4,10 +4,30 @@ from tkinter import ttk
 root = tk.Tk()
 root.title("Calculator")
 
+lineq = ""
+
+def press(val):
+    global lineq
+    lineq = lineq + str(val)
+    lineq.set()
+
+def eqpress():
+
+    try:
+
+        global lineq
+        total = str(eval(lineq))
+        result.config(text = total)
+        lineq = ""
+    except:
+        result.config(text = "ERROR")
+        print(lineq)
+
+
 result = ttk.Label(root, text = "Null")
 result.grid(row = 0, column = 0, columnspan = 5, padx = 10, pady = 10, )
 
-btn7 = ttk.Button(root, text = "7")
+btn7 = ttk.Button(root, text = "7", command= lambda : press(7))
 btn7.grid(row = 1 , column = 1)
 
 btn8 = ttk.Button(root, text = "8")
