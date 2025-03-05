@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-def convertion():
+def convertion(event):
     try:
         num = float(number.get())
         if rclick.get() == 1:
@@ -20,7 +20,8 @@ def convertion():
 
 
 root = tk.Tk()
-rclick = tk.IntVar()
+root.title("Temperature Converter")
+rclick = tk.IntVar(value = 1)
 
 
 title = ttk.Label(root,text = "Temperature converter")
@@ -44,5 +45,7 @@ convb.grid(row = 3, column = 0, columnspan=2)
 
 resl = ttk.Label(root, text = "",)
 resl.grid(row = 4, column= 0, columnspan=2)
+
+root.bind("<Return>", convertion)
 
 root.mainloop()
