@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 def convertion():
-    num = int(number.get())
+    num = float(number.get())
 
     if rclick.get() == 1:
         #C to F
@@ -11,7 +11,7 @@ def convertion():
 
 
     elif rclick.get() == 2:
-        #F to c
+        #F to C
         result = (num - 32) * 5/9
         resl.config(text = f"{num}F is equal to {round(result,2)}C")
 
