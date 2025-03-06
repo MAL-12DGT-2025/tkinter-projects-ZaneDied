@@ -9,25 +9,36 @@ results = ""
 def press(val):
     global lineq
     global results
-    if val == "=":
-        total = str(eval(lineq))
-        result.config(text = total)
-        lineq = total
-        results = total
-        print(lineq)
-    elif val == "c":
+    try:
+        if val == "=" or val == "\r":
+            total = str(eval(lineq))
+            result.config(text = total)
+            lineq = total
+            results = total
+            print(lineq)
+        elif val == "c":
+            lineq = ""
+            results = ""
+            result.config(text = "0")
+        else:
+            lineq = lineq + str(val)
+            if val == "*":
+                results = f"{results} x"
+            else:
+                results = f"{results} {val}"
+                
+            result.config(text = results)
+    except SyntaxError:
         lineq = ""
         results = ""
-        result.config(text = "0")
-    else:
-        lineq = lineq + str(val)
-        if val == "*":
-            results = f"{results} x"
-        else:
-            results = f"{results} {val}"
-            
-        result.config(text = results)
+        result.config(text = "Error")
 
+def keyprs(event):
+    num = event.char
+    if num.isnumeric() or num == "/" or num == "*" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
+        press(num)
+    else:
+        pass
 
 
 result = ttk.Label(root, text = "0")
@@ -88,6 +99,8 @@ btneq = ttk.Button(root, text = "=", command= lambda : press("="))
 btneq.grid(row = 5, column = 1, columnspan = 5, ipadx = 115)
 
 
-
+root.bind('<Key>', keyprs)
 
 root.mainloop()
+
+
