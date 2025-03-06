@@ -21,11 +21,16 @@ def press(val):
             results = ""
             result.config(text = "0")
         else:
-            lineq = lineq + str(val)
-            if val == "*":
-                results = f"{results} x"
+            numer = str(val)
+            print(numer.isnumeric())
+            if numer.isnumeric():
+                lineq = lineq + str(val)
+                results = results + str(val)
             else:
-                results = f"{results} {val}"
+                if val == "*":
+                    results = f"{results} x"
+                else:
+                    results = f"{results} {val} "
                 
             result.config(text = results)
     except SyntaxError:
