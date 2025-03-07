@@ -27,11 +27,12 @@ def press(val):
                 lineq = lineq + str(val)
                 results = results + str(val)
             else:
-                lineq = lineq + str(val)
-                if val == "*":
+                if numer == "x":
                     results = f"{results} x "
+                    lineq = lineq + "*"
                 else:
                     results = f"{results} {val} "
+                    lineq = lineq + str(val)
 
             result.config(text=results)
     except SyntaxError:
@@ -43,7 +44,7 @@ def press(val):
 def keyprs(event):
     num = event.char
     if num.isnumeric(
-    ) or num == "/" or num == "*" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
+    ) or num == "/" or num == "x" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
         press(num)
     else:
         pass
