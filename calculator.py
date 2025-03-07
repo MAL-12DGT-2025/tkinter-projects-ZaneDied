@@ -9,44 +9,45 @@ results = ""
 
 
 def press(val):
-    global lineq
-    global results
-    try:
-        if val == "=" or val == "\r":
-            total = str(eval(lineq))
-            result.config(text=total)
-            lineq = total
-            results = total
-        elif val == "c":
-            lineq = ""
-            results = ""
-            result.config(text="0")
+  global lineq
+  global results
+  try:
+    if val == "=" or val == "\r":
+      total = str(eval(lineq))
+      result.config(text=total)
+      lineq = total
+      results = total
+    elif val == "c":
+      lineq = ""
+      results = ""
+      result.config(text="0")
+    else:
+      numer = str(val)
+      if numer.isnumeric() or numer == ".":
+        lineq = lineq + str(val)
+        results = results + str(val)
+      else:
+        if numer == "x":
+          results = f"{results} x "
+          lineq = lineq + "*"
         else:
-            numer = str(val)
-            if numer.isnumeric() or numer == ".":
-                lineq = lineq + str(val)
-                results = results + str(val)
-            else:
-                if numer == "x":
-                    results = f"{results} x "
-                    lineq = lineq + "*"
-                else:
-                    results = f"{results} {val} "
-                    lineq = lineq + str(val)
+          results = f"{results} {val} "
+          lineq = lineq + str(val)
 
-            result.config(text=results)
-    except Exception as e:
-        lineq = ""
-        results = ""
-        result.config(text=f"Error: {e}")
+      result.config(text=results)
+  except Exception as e:
+    lineq = ""
+    results = ""
+    result.config(text=f"{type(e).__name__}")
+
 
 def keyprs(event):
-    num = event.char
-    if num.isnumeric(
-    ) or num == "/" or num == "." or num == "x" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
-        press(num)
-    else:
-        pass
+  num = event.char
+  if num.isnumeric(
+  ) or num == "/" or num == "." or num == "x" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
+    press(num)
+  else:
+    pass
 
 
 result = ttk.Label(root, text="0")
