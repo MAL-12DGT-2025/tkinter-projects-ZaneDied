@@ -44,7 +44,7 @@ def press(val):
 def keyprs(event):
     num = event.char
     if num.isnumeric(
-    ) or num == "/" or num == "x" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
+    ) or num == "/" or num == "." or num == "x" or num == "+" or num == "-" or num == "c" or num == "\r" or num == "=":
         press(num)
     else:
         pass
