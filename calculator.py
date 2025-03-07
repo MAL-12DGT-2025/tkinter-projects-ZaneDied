@@ -39,8 +39,15 @@ def press(val):
         lineq = ""
         results = ""
         result.config(text="Error")
-
-
+    except ZeroDivisionError:
+        lineq = ""
+        results = ""
+        result.config(text="Zero Division Error")
+    except ValueError:
+        lineq = ""
+        results = ""
+        result.config(text="Value Error")
+    
 def keyprs(event):
     num = event.char
     if num.isnumeric(
