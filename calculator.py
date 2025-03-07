@@ -17,21 +17,16 @@ def press(val):
             result.config(text=total)
             lineq = total
             results = total
-            print(total, results)
-            print(lineq)
         elif val == "c":
             lineq = ""
             results = ""
             result.config(text="0")
         else:
             numer = str(val)
-            print(numer,1)
             if numer.isnumeric() or numer == ".":
-                print(numer,2)
                 lineq = lineq + str(val)
                 results = results + str(val)
             else:
-                print(numer, 3)
                 lineq = lineq + str(val)
                 if val == "*":
                     results = f"{results} x "
