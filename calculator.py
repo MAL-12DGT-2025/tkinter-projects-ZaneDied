@@ -27,7 +27,7 @@ def press(val):
         lineq = lineq + str(val)
         results = results + str(val)
       else:
-        if numer == "x":
+        if numer == "*":
           results = f"{results} x "
           lineq = lineq + "*"
         else:
