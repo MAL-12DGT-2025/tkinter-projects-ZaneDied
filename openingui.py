@@ -7,16 +7,25 @@ root.title("File reader")
 
 def bpress(ty):
     if ty == "search":
-        file = os.listdir()
+        files = os.listdir()
         listf = ""
         for file in files:
-            listf = f"{file}\n{listf}" 
-        print(listf)
+            if file.endswith(".txt"):
+                listf = f"{file}\n{listf}" 
+        listf = listf.rstrip(listf[-4:])
         returnl.config(text = listf)
-    if ty == "read":
-        print("")
-
         
+    if ty == "read":
+        try:
+            f = open(direc.get(), "r")
+            returnl.config(text = f.read())
+        except Exception as e:
+            returnl.config(text=f"{type(e).__name__}")
+    
+direc = tk.StringVar()
+entryn = ttk.Entry(root, textvariable = direc)
+entryn.grid(row = 2, column = 1)
+
 header = ttk.Label(root, text = "Python text reader \npress search to start")
 header.grid(row = 0, column = 1)
 
@@ -28,11 +37,6 @@ writeb.grid(row = 1, column = 1)
 
 searchb = ttk.Button(root, text = "Search", command = lambda : bpress("search"))
 searchb.grid(row = 1, column = 2)
-
-
-direc = tk.StringVar()
-entryn = ttk.Entry(root, textvariable = direc)
-entryn.grid(row = 2, column = 1)
 
 returnl = ttk.Label(root, text = "")
 returnl.grid(row = 3, column = 1)
