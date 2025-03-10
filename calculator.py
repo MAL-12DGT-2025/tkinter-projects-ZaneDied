@@ -27,13 +27,10 @@ def press(val):
         lineq = lineq + str(val)
         results = results + str(val)
       else:
-        print(numer)
         if numer == "x":
           results = f"{results} x "
           lineq = lineq + "*"
-          print(lineq)
         else:
-          print('print')
           results = f"{results} {val} "
           lineq = lineq + str(val)
 
