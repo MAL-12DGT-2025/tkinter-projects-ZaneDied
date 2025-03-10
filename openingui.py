@@ -15,10 +15,6 @@ def bpress(ty):
         returnl.config(text = listf)
     if ty == "read":
         print("")
-
-
-files = os.listdir()
-
 header = ttk.Label(root, text = "Python text reader \npress search to start")
 header.grid(row = 0, column = 1)
 
