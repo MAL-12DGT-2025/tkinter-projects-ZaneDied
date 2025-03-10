@@ -27,14 +27,13 @@ def press(val):
         lineq = lineq + str(val)
         results = results + str(val)
       else:
-<<<<<<< HEAD
-        if numer == "*":
-=======
+        print(numer)
         if numer == "x":
->>>>>>> 4f41066e636bc673646ad0b783bb18a070e4f126
           results = f"{results} x "
           lineq = lineq + "*"
+          print(lineq)
         else:
+          print('print')
           results = f"{results} {val} "
           lineq = lineq + str(val)
 
@@ -118,9 +117,4 @@ btneq = ttk.Button(root, text="=", command=lambda: press("="))
 btneq.grid(row=5, column=1, columnspan=5, ipadx=115)
 
 root.bind('<Key>', keyprs)
-
-<<<<<<< HEAD
 root.mainloop()
-=======
-root.mainloop()
->>>>>>> 4f41066e636bc673646ad0b783bb18a070e4f126
