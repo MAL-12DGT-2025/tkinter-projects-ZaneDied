@@ -17,10 +17,11 @@ def bpress(ty):
         
     if ty == "read":
         try:
-            f = open(direc.get(), "r")
+            f = open(f"{direc.get()}.txt", "r")
             returnl.config(text = f.read())
         except Exception as e:
             returnl.config(text=f"{type(e).__name__}")
+            
     
 direc = tk.StringVar()
 entryn = ttk.Entry(root, textvariable = direc)
