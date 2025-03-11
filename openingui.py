@@ -5,22 +5,36 @@ import os
 root = tk.Tk()
 root.title("File reader")
 
-def bpress(ty):
-    if ty == "search":
+def fsearch():
         files = os.listdir()
         listf = ""
         for file in files:
             if file.endswith(".txt"):
                 listf = f"{file}\n{listf}" 
-        listf = listf.rstrip(listf[-4:])
-        returnl.config(text = listf)
-        
+        listf = listf.rstrip(listf[-5:])
+        return listf
+
+def bpress(ty):
+    if ty == "search":
+        returnl.config(text = fsearch())
     if ty == "read":
         try:
             f = open(f"{direc.get()}.txt", "r")
             returnl.config(text = f.read())
         except Exception as e:
             returnl.config(text=f"{type(e).__name__}")
+    if ty == "write":
+        files = os.listdir()
+        listf = ""
+        for file in files:
+            if file.endswith(".txt"):
+                listf = f"{file}\n{listf}" 
+        listf = listf.rstrip(listf[-5:])
+        returnl.config(text = f"Please select a file {fsearch()}")
+        direc.set("")
+        
+        try:
+            f = open(f"{direc.get}.txt", "w")
             
     
 direc = tk.StringVar()
