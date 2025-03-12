@@ -33,7 +33,7 @@ def bpress(ty):
     if ty == "read":
         count = 0
         try:
-            f = open(f"{direc.get()}.txt", "r")
+            f = open(f"{direc.get()}.txt", "r", encoding = 'utf-8')
             returnl.config(text = f.read())
         except Exception as e:
             returnl.config(text=f"{type(e).__name__}")
