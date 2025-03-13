@@ -11,9 +11,7 @@ def fsearch(chc,op):
         listf = ""
         for file in files:
             if file.endswith(".txt"):
-                listf = f"{file.rsplit('.', maxsplit=1)[0]}\n{listf}" 
-                
-        
+                listf = f"{file.rsplit('.', maxsplit=1)[0]}\n{listf}"  
         if listf == "":
                 listf = "No files found"
         elif chc == "get":
@@ -80,10 +78,4 @@ searchb.grid(row = 1, column = 2)
 
 returnl = ttk.Label(root, text = "")
 returnl.grid(row = 3, column = 1)
-
-
-
-
-
-
 root.mainloop()
