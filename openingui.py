@@ -22,6 +22,7 @@ def fsearch(chc,op):
                 return True
             else:
                  return False
+        return listf
 def bpress(ty):
     global count
     global fileexplore
