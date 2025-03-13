@@ -27,5 +27,5 @@ menu['values'] = (
 
 
 menu.grid(column = 1, row = 5) 
-menu.current() 
+menu.current(1) 
 window.mainloop() 
