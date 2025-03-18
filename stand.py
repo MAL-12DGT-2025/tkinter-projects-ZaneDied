@@ -5,7 +5,13 @@ from tkinter import ttk
 root = tk.Tk() 
 root.geometry('400x400') 
 root.title('Lemonade stand!!') 
+constal = {
 
+    "Lemonade drink $3":"3",
+    "Sprite Lemonade $5":"5",
+    "Ice tea $4":"4",     
+
+}
 cartv = ""
 carv = ""
 def press(ops):
