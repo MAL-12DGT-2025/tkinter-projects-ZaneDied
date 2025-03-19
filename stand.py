@@ -38,11 +38,6 @@ def press(ops):
 
     else:
         messagebox.showwarning("Cart ERROR", "Nothing in the cart")
-    
-    for x in cart_items:
-        if x in menul:
-            extra.grid(row=6,column=1)
-
 
 
 ttk.Label(root, text="Lemonade Stand").grid(row=0, column=1)
@@ -53,26 +48,21 @@ cart.grid(row=5, column=1)
 menu = ttk.Combobox(root, width=27)
 menu.grid(row=1, column=1)
 
-extra = ttk.Combobox(root, width=27)
-extra.grid_remove()
 
 menul = (
     "Lemonade drink $3",
     "Sprite Lemonade $5", 
-    "Ice tea $4"
+    "Ice tea $4",
 )
 
-extra['values'] = (
-    "Extra sugar +$20%",
-    "Extra lemon +$10%",
-    "Medium cup +$30%",
-    "Large cup +$60%",
-)
 
 menu['values'] = menul
 
 addb = ttk.Button(root, text="Add", command=lambda: press("add"))
 addb.grid(row=2, column=0)
+
+addeb = ttk.Button(root, text = "Add", command = lambda: press("adde"))
+addeb.grid_remove()
 
 removeb = ttk.Button(root, text="Remove", command=lambda: press("remove"))
 removeb.grid(row=3, column=0)
