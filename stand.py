@@ -20,7 +20,7 @@ def press(ops):
         total += float(dictcost[menu.get()])
         cart.config(text=f"Cart: {' + '.join(cart_items)}\nTotal: ${total:.2f}")
 
-    elif cart_items or menu.get() in cart_items:
+    elif cart_items:
         if ops == "checkout":
             
             messagebox.showinfo("Checkout", f"Total amount: ${total:.2f}\nThank you for your purchase!")
