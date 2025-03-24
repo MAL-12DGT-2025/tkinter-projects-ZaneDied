@@ -61,8 +61,6 @@ menu['values'] = menul
 addb = ttk.Button(root, text="Add", command=lambda: press("add"))
 addb.grid(row=2, column=0)
 
-addeb = ttk.Button(root, text = "Add", command = lambda: press("adde"))
-addeb.grid_remove()
 
 removeb = ttk.Button(root, text="Remove", command=lambda: press("remove"))
 removeb.grid(row=3, column=0)
