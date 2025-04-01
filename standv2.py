@@ -11,14 +11,7 @@ with Image.open("strawberry.png") as im:
 
 image = ImageTk.PhotoImage(im)
 image_label = tk.Label(root, image=image)
-image_label.pack()
+image_label.grid(row = 1, column = 0)
 
 
-with Image.open("apple.png") as ime:
-    ime.thumbnail(size)
-    ime.save("image_apple.webp")
-
-imeg= ImageTk.PhotoImage(ime)
-imeg_label = tk.Label(root, image=imeg)
-imeg_label.pack()
 root.mainloop()
