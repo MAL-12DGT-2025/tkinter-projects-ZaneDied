@@ -4,27 +4,21 @@ from tkinter import PhotoImage
 
 root = tk.Tk()
 root.geometry('755x500')
-
 size = (110, 110)
-with Image.open("applle.png") as im:
-    im.thumbnail(size)
-    im.save("image_thumbnail.webp")
-
-apple = ImageTk.PhotoImage(im)
 
 
-appleimage = tk.Label(root, image=apple)
-appleimage.grid(row = 0, column = 0)
 
-with Image.open("lemonn.png") as i:
-    i.thumbnail(size)
-    i.save("image_thumbnail.webp")
+with Image.open("limee.png") as limepng:
+     limepng.thumbnail(size)
+     limepng.save("limepng.webp")
 
-lemon = ImageTk.PhotoImage(i)
+limeimage = ImageTk.PhotoImage(limepng)
 
 
-lemonimage = tk.Label(root, image=lemon)
-lemonimage.grid(row = 0, column = 1)
+limepng = tk.Label(root, image=limeimage)
+limepng.grid(row = 0, column = 0)
+
+
 
 
 
