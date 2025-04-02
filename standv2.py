@@ -3,12 +3,12 @@ from PIL import Image, ImageTk, ImageOps
 from tkinter import PhotoImage
 
 root = tk.Tk()
-root.geometry('700x500')
+root.geometry('900x500')
 
 canvas = tk.Canvas(root,width=700,height=500)
 canvas.grid(column=0, row=0)
-canvas.create_oval(0,0,150,150,fill="#F8CECC",outline="#F8CECC")
-canvas
+canvas.create_oval(285,125,285+130,125+130,fill="#F8CECC",outline="#F8CECC")
+
 
 
 
@@ -18,7 +18,7 @@ with Image.open("strawberry.png") as im:
     im.save("image_thumbnail.webp")
 
 image = ImageTk.PhotoImage(im)
-canvas.create_image(364,191,image = image)
+canvas.create_image(305,135,image = image)
 
 """image_label = tk.Label(root, image=image)
 image_label.grid(row = 0, column = 0)
