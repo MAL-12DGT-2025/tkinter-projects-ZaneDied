@@ -115,3 +115,4 @@ btneq.grid(row=5, column=1, columnspan=5, ipadx=115)
 
 root.bind('<Key>', keyprs)
 root.mainloop()
+print("1")
