@@ -36,6 +36,8 @@ appleimg = ttk.Label(root, image=applec).grid(row = 2, column = 4, padx=padsx)
 add1 = ttk.Button(root,text = "Add")
 add1.grid(row = 3, column = 0)
 
+add2 = ttk.Button(root, text = "Add")
+add2.grid(row = 3, column = 1)
 
 
 
