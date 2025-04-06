@@ -64,5 +64,4 @@ def onmouse(event):
 
 root.bind('<Button-1>',onmouse)
 
-
 root.mainloop()
