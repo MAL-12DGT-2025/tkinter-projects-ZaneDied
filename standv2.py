@@ -38,23 +38,36 @@ unhovercol = "skyblue"
 style.configure("addb.TButton", background=unhovercol)
 style.map("addb.TButton",background=[("active",hovercol)])
 
-add1 = ttk.Button(root,text = "Add",style='addb.TButton')
+def pressb(typ):
+        if typ == "ad1":
+                print(1)
+        elif typ == "ad2":
+              print(2)
+        elif typ == "ad3":
+              print(3)
+        elif typ == "ad4":
+              print(4)
+        elif typ == "ad5":
+              print(5)
+add1 = ttk.Button(root,text = "Add",style='addb.TButton',command = lambda:pressb("ad1"))
 add1.grid(row = 3, column = 0, padx = padbx)
 
-add2 = ttk.Button(root, text = "Add", style = 'addb.TButton')
+add2 = ttk.Button(root, text = "Add", style = 'addb.TButton',command = lambda:pressb("ad2"))
 add2.grid(row = 3, column = 1, padx=padbx)
 
-add3 = ttk.Button(root, text = "Add", style = 'addb.TButton')
+add3 = ttk.Button(root, text = "Add", style = 'addb.TButton',command = lambda:pressb("ad3"))
 add3.grid(row = 3, column = 2, padx=padbx)
 
-add4 = ttk.Button(root, text = "Add", style ='addb.TButton')
+add4 = ttk.Button(root, text = "Add", style ='addb.TButton',command = lambda:pressb("ad4"))
 add4.grid(row = 3, column = 3, padx=padbx)
 
-add5 = ttk.Button(root, text = "Add",style = 'addb.TButton')
+add5 = ttk.Button(root, text = "Add",style = 'addb.TButton',command = lambda:pressb("ad5"))
 add5.grid(row = 3, column = 4, padx=padbx)
 
 
-def onmouse(event):
+
+
+"""def onmouse(event):
         px = []
         py = []
         px.append(event.x)
@@ -62,6 +75,6 @@ def onmouse(event):
         print(px , py)
         print(root.winfo_reqheight(), root.winfo_reqwidth())
 
-root.bind('<Button-1>',onmouse)
+root.bind('<Button-1>',onmouse)"""
 
 root.mainloop()
