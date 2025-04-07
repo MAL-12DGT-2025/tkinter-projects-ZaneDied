@@ -38,6 +38,10 @@ unhovercol = "skyblue"
 style.configure("addb.TButton", background=unhovercol)
 style.map("addb.TButton",background=[("active",hovercol)])
 
+def opfr(typ):
+      
+
+
 def pressb(typ):
         if typ == "ad1":
                 print(1)
@@ -49,6 +53,8 @@ def pressb(typ):
               print(4)
         elif typ == "ad5":
               print(5)
+
+
 add1 = ttk.Button(root,text = "Add",style='addb.TButton',command = lambda:pressb("ad1"))
 add1.grid(row = 3, column = 0, padx = padbx)
 
