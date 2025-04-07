@@ -40,7 +40,7 @@ style.map("addb.TButton",background=[("active",hovercol)])
 
 def opfr(typ):
       
-
+        print(3)
 
 def pressb(typ):
         if typ == "ad1":
