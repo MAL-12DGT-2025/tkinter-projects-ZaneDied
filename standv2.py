@@ -38,21 +38,37 @@ unhovercol = "skyblue"
 style.configure("addb.TButton", background=unhovercol)
 style.map("addb.TButton",background=[("active",hovercol)])
 
+windowcount = 0
+ 
 def opfr(typ):
-      
-        print(3)
+        global windowcount
+        retyp = f"{typ}root{windowcount + 1}"
+        retyp = tk.Toplevel(root)
+        retyp.geometry("350x200")
+        retyp.title("Juice Options")
+        retyp.fim = openimagec(f"{typ}c.png",f"{typ}")
+        fimg = ttk.Label(retyp, image=retyp.fim).grid(row = 0, column = 0)
+
+
+        icec = ttk.Checkbutton(retyp, text = "Extra icecube").grid(row = 0 ,column = 1, padx=5)
+        fruitc = ttk.Checkbutton(retyp, text = "Extra fruit").grid(row=1,column=1, padx=5)
+
+
+        close_button = ttk.Button(retyp, text="Close", command=retyp.destroy)
+        close_button.grid(row=5, column=0,)
+
 
 def pressb(typ):
         if typ == "ad1":
-                print(1)
+                opfr("lime")
         elif typ == "ad2":
-              print(2)
+                opfr("lemon")
         elif typ == "ad3":
-              print(3)
+                opfr("straw")
         elif typ == "ad4":
-              print(4)
+                opfr("orange")
         elif typ == "ad5":
-              print(5)
+                opfr("apple")
 
 
 add1 = ttk.Button(root,text = "Add",style='addb.TButton',command = lambda:pressb("ad1"))
@@ -71,41 +87,7 @@ add5 = ttk.Button(root, text = "Add",style = 'addb.TButton',command = lambda:pre
 add5.grid(row = 3, column = 4, padx=padbx)
 
 
-def open_lime_options():
-    lime_options_window = tk.Toplevel(root)
-    lime_options_window.title("Lime Juice Options")
 
-    ice_label = ttk.Label(lime_options_window, text="Ice:")
-    ice_label.grid(row=0, column=0, padx=5, pady=5)
-    ice_yes_radio = ttk.Radiobutton(lime_options_window, text="Yes", value="yes")
-    ice_yes_radio.grid(row=0, column=1, padx=5, pady=5)
-    ice_no_radio = ttk.Radiobutton(lime_options_window, text="No", value="no")
-    ice_no_radio.grid(row=0, column=2, padx=5, pady=5)
-
-    sugar_label = ttk.Label(lime_options_window, text="Sugar:")
-    sugar_label.grid(row=1, column=0, padx=5, pady=5)
-    sugar_yes_check = ttk.Checkbutton(lime_options_window, text="Add Sugar")
-    sugar_yes_check.grid(row=1, column=1, columnspan=2, padx=5, pady=5)
-
-    # You can add more options here like sweetness level, etc.
-
-    close_button = ttk.Button(lime_options_window, text="Close", command=lime_options_window.destroy)
-    close_button.grid(row=2, column=0, columnspan=3, padx=5, pady=10)
-
-add1 = ttk.Button(root, text="Add", style='addb.TButton', command=open_lime_options)
-add1.grid(row=3, column=0, padx=padbx)
-
-add2 = ttk.Button(root, text="Add", style='addb.TButton')
-add2.grid(row=3, column=1, padx=padbx)
-
-add3 = ttk.Button(root, text="Add", style='addb.TButton')
-add3.grid(row=3, column=2, padx=padbx)
-
-add4 = ttk.Button(root, text="Add", style='addb.TButton')
-add4.grid(row=3, column=3, padx=padbx)
-
-add5 = ttk.Button(root, text="Add", style='addb.TButton')
-add5.grid(row=3, column=4, padx=padbx)
 
 
 """def onmouse(event):
